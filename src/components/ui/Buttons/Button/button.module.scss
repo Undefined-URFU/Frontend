@@ -1,0 +1,27 @@
+@import 'styles/variables';
+
+.button {
+  padding: 8px 16px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  border-radius: $button_border_radius;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.button[data-theme='primary'] {
+  background: $pink_color;
+  color: $blue_color;
+}
+.button[data-theme='blue'] {
+  background: $blue_color;
+  color: $pink_color;
+}

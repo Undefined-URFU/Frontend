@@ -1,0 +1,27 @@
+@import 'styles/variables';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 388px;
+  padding: 32px;
+  background: #FFFFFF;
+  border-radius: $form_border_radius;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+}
+
+.h2 {
+  margin-top: 8px;
+  margin-bottom: 32px;
+}
+
+.formFields{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

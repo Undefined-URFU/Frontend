@@ -1,0 +1,74 @@
+@import 'variables';
+
+.text__black {
+  color: $black_color;
+}
+
+.text__red {
+  color: $red_color;
+}
+
+.text__gray {
+  color: $gray_color;
+}
+
+.text__blue{
+  color: $blue_color;
+}
+
+.text__300 {
+  font-weight: 300;
+}
+
+.text__400 {
+  font-weight: 400;
+}
+
+.text__500 {
+  font-weight: 500;
+}
+
+.text__800 {
+  font-weight: 800;
+}
+
+.text__h1 {
+  font-size: 32px;
+}
+
+.text__h2 {
+  font-size: 24px;
+}
+
+.text__h3 {
+  font-size: 18px;
+}
+
+.text__regular{
+  font-size: 16px;
+}
+
+.text__regular__s{
+  font-size: 14px;
+}
+
+.text__underline {
+  text-decoration: underline;
+}
+
+
+.link {
+  cursor: pointer;
+  text-decoration: underline;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+
+
+
+
+
