@@ -15,7 +15,11 @@ $checkedBackground: #FFD7ED;
     // СОСТОЯНИЕ: Focus
     &:focus-visible + span::before {
       border-color: $inTargetCheckboxBorder;
-      cursor: pointer;
+    }
+
+    // СОСТОЯНИЕ: Focus and Checked
+    &:checked:focus-visible + span::before {
+      border-color: $inTargetCheckboxBorder;
     }
 
     // СОСТОЯНИЕ: Checked

@@ -11,34 +11,18 @@ interface IAuthFormProps {
   action: 'register' | 'login'
 }
 
-const AuthForm = ({ action, children }: PropsWithChildren<IAuthFormProps>) => {
+const AuthForm = ({action, children}: PropsWithChildren<IAuthFormProps>) => {
   const authCtrl = useContext(authContext);
   const isLogin = action === 'login';
 
   return (
     <div className={s.container}>
-      <ArrowIcon />
-
+      <ArrowIcon/>
       <span className={cn(s.h2, `text__500 text__h2`)}>
         {isLogin ? 'Авторизация' : 'Регистрация'}
       </span>
 
       <div className={s.formFields}>
-
-
-        {!isLogin && (
-          <TextInput
-            onChange={authCtrl.onChange}
-            value={authCtrl.values.name}
-            name='name'
-            type='text'
-            placeholder='Введите имя'
-          >
-            Имя
-          </TextInput>
-        )}
-
-
         <TextInput<IAuthName>
           value={authCtrl.values.email}
           onChange={authCtrl.onChange}

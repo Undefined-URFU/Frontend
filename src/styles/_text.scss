@@ -1,19 +1,19 @@
-@import 'variables';
+@use 'variables';
 
 .text__black {
-  color: $black_color;
+  color: variables.$black_color;
 }
 
 .text__red {
-  color: $red_color;
+  color: variables.$red_color;
 }
 
 .text__gray {
-  color: $gray_color;
+  color: variables.$gray_color;
 }
 
-.text__blue{
-  color: $blue_color;
+.text__blue {
+  color: variables.$blue_color;
 }
 
 .text__300 {
@@ -44,11 +44,11 @@
   font-size: 18px;
 }
 
-.text__regular{
+.text__regular {
   font-size: 16px;
 }
 
-.text__regular__s{
+.text__regular__s {
   font-size: 14px;
 }
 

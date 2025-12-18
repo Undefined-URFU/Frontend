@@ -5,9 +5,9 @@
   flex-direction: column;
   width: 388px;
   padding: 32px;
-  background: #FFFFFF;
+  background: $white_color;
   border-radius: $form_border_radius;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+  box-shadow: $box_shadow_form;
 }
 
 .h2 {

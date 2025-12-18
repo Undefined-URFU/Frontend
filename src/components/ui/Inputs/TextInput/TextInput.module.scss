@@ -1,4 +1,4 @@
-@import 'styles/variables';
+@use 'styles/variables';
 
 .inputWrapper {
   position: relative;
@@ -13,8 +13,8 @@
   width: 100%;
   font-size: 16px;
   padding: 8px 12px;
-  border: 1px solid $gray_color;
-  border-radius: $input_border_radius;
+  border: 1px solid variables.$gray_color;
+  border-radius: variables.$input_border_radius;
   outline: none;
   transition: all 0.3s ease;
   font-family: inherit;
@@ -26,8 +26,12 @@
   font-weight: 300;
 
   &::placeholder {
-    color: $gray_color;
+    color: variables.$gray_color;
   }
+}
+
+.textInput:focus {
+  border: 1px solid variables.$blue_color;
 }
 
 .textInput::-webkit-outer-spin-button,

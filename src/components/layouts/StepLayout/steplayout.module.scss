@@ -1,0 +1,13 @@
+.step_container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.h2{
+  margin-top: 8px;
+  align-self: center;
+  text-align: center;
+  line-height: 24px;
+}

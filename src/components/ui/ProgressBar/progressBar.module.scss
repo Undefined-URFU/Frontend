@@ -1,0 +1,20 @@
+@use "styles/variables";
+
+.progress_bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.step {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: variables.$pink_color;
+  transition: background-color 0.3s ease;
+
+  &.current_step {
+    background: variables.$blue_color;
+  }
+}

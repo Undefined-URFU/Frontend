@@ -10,9 +10,11 @@ interface IProps {
 }
 
 const Checkbox = (props: IProps) => {
+
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     props.onCheck(e.target.checked, props.name)
   }
+
 
   return (
     <div onClick={(e) => e.stopPropagation()}>

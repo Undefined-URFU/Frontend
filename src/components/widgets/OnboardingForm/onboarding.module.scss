@@ -1,0 +1,18 @@
+@use 'styles/variables';
+
+
+.container {
+  width: 388px;
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  box-shadow: $box_shadow_form;
+  background: $white_color;
+  border-radius: $form_border_radius;
+}
+
+.actions{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

@@ -5,6 +5,8 @@ export interface ILoginPayload {
 
 export interface IRegisterPayload extends ILoginPayload {
   name: string,
+  birthdayDate: string,
+  sex: string,
 }
 
 export interface IAuthState {
@@ -12,6 +14,7 @@ export interface IAuthState {
   password: string,
   name: string,
   rememberMe: boolean,
+  birthdayDate: string,
 }
 
 export type IAuthName = keyof IAuthState;

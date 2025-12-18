@@ -1,4 +1,4 @@
-@import 'styles/variables';
+@use 'styles/variables';
 
 .button {
   padding: 8px 16px;
@@ -6,7 +6,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  border-radius: $button_border_radius;
+  border-radius: variables.$button_border_radius;
   outline: none;
   border: none;
   cursor: pointer;
@@ -17,11 +17,26 @@
   transition: 0.3s;
 }
 
-.button[data-theme='primary'] {
-  background: $pink_color;
-  color: $blue_color;
+.button:hover {
+  box-shadow: variables.$box_shadow_form;
 }
+
+.button[data-theme='primary'] {
+  background: variables.$pink_color;
+  color: variables.$blue_color;
+}
+
 .button[data-theme='blue'] {
-  background: $blue_color;
-  color: $pink_color;
+  background: variables.$blue_color;
+  color: variables.$white_color;
+  &:hover{
+    background: variables.$pink_color;
+    color: variables.$black_color;
+  }
+}
+
+.button[data-theme='no-background'] {
+  border: 1px solid variables.$blue_color;
+  color: variables.$black_color;
+  background: variables.$white_color;
 }

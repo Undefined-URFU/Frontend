@@ -1,0 +1,55 @@
+$defaultRadioBorder: #41549A66;
+$inTargetRadioBorder: #41549A;
+$checkedBackground: #FFD7ED;
+
+.radio {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+
+  // СОСТОЯНИЕ: Focus
+  &:focus-visible + span::before {
+    border-color: $inTargetRadioBorder;
+    cursor: pointer;
+  }
+
+  // СОСТОЯНИЕ: Checked
+  &:checked + span::before {
+    background-color: $checkedBackground;
+    border-color: $inTargetRadioBorder;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('../../../../assets/images/radio.svg');
+  }
+}
+
+.span {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+
+  // СОСТОЯНИЕ: Default
+  &::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid $defaultRadioBorder;
+    background-color: white;
+    margin-right: 4px;
+    flex-shrink: 0;
+    transition: border-color 0.2s, background-color 0.2s;
+  }
+
+  // СОСТОЯНИЕ: Hover
+  &:hover input:not(:checked) + span::before {
+    border-color: $inTargetRadioBorder;
+  }
+}
+
+

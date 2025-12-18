@@ -1,0 +1,9 @@
+@use 'styles/variables';
+
+.container{
+  padding: 4px 8px;
+  background-color: variables.$gray_color;
+  &:hover{
+    background-color: variables.$gray_color;
+  }
+}
