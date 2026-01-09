@@ -9,6 +9,7 @@ const useOnboardingFormCtrl = () => {
   const {wait} = useHttpLoader()
   const [step, setStep] = useState<number>(1);
   const [questionnaire, setQuestionnaire] = useState(generateDefaultQuestionnaire());
+  const [errors, setErrors] = useState<{ skinType?: string }>({});
   const setAuthState = useSetAtom(authAtom)
   const handleChange = (name: string, value: string | string[]) => {
     setQuestionnaire((prev) => ({
@@ -18,8 +19,14 @@ const useOnboardingFormCtrl = () => {
   };
 
   const handleNextStep = () => {
-    setStep((prev) => prev + 1);
-  }
+
+    if (step === 1 && !questionnaire.skinType) {
+      setErrors({ skinType: 'Пожалуйста, выберите тип кожи' });
+      return;
+    }
+    setStep((prev) => prev + 1)
+    setErrors({});
+  };
   const handlePreviousStep = () => {
     setStep((step) => step - 1);
   }
@@ -39,7 +46,7 @@ const useOnboardingFormCtrl = () => {
 
   }
 
-  return {questionnaire, handleChange, step, handleNextStep, handlePreviousStep, handleSubmit};
+  return {questionnaire, handleChange, step, handleNextStep, handlePreviousStep, handleSubmit, errors};
 
 }
 

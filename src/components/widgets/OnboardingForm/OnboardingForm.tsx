@@ -40,6 +40,7 @@ const OnboardingForm = () => {
       <OnboardingContext value={{
         values: ctrl.questionnaire,
         onChange: ctrl.handleChange,
+        errors: ctrl.errors,
       }}>
         {renderStepContent()}
       </OnboardingContext>

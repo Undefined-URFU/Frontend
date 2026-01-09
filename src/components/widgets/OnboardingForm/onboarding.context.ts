@@ -8,6 +8,7 @@ interface IOnboardingState {
 interface IOnboardingFormContext {
   values: IOnboardingState,
   onChange: (name: string, val: string | string[],) => void,
+  errors: { skinType?: string },
 }
 
 export const generateDefaultQuestionnaire = () => ({
@@ -19,6 +20,7 @@ const onboardingFormContext = createContext<IOnboardingFormContext>({
   values: generateDefaultQuestionnaire(),
   onChange: () => {
   },
+  errors: {}
 })
 
 export default onboardingFormContext
