@@ -19,6 +19,7 @@ const useHttpLoaderWithServerError = () => {
       (resp) => {
         if (resp.status === 'error') {
           setServerError(resp.body?.message || resp.message)
+          console.log(resp)
         }
 
         if (onLoad) onLoad(resp)

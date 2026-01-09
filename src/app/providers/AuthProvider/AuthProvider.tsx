@@ -12,7 +12,6 @@ const AuthProvider = (props: PropsWithChildren) => {
     applyInterceptors(setAuthState)
   }, []);
 
-  console.log(authState.token, authState.isOnboarding);
   if (!authState.token || authState.isOnboarding) {
     return <Auth />;
   }

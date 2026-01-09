@@ -39,6 +39,22 @@ export const handleHttpResponse = <T>(response: AxiosResponse<T>): ISuccessRespo
   }
 }
 export const handleErrorResponse = (err: AxiosError): IErrorResponse => {
+  if (err?.response?.status === 404) {
+    return {
+      message: 'Запрашиваемый ресурс не найден',
+      code: err?.response?.status,
+      status: 'error',
+    }
+  }
+
+  if (err?.response?.status === 400) {
+    return {
+      status: 'error',
+      message: 'С вашими данными что-то не так',
+      code: err?.response?.status,
+      body: err?.response?.data as Record<string, string>,
+    }
+  }
   return {
     status: 'error',
     message: err?.message ?? '',

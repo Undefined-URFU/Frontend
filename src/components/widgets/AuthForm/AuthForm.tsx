@@ -9,9 +9,10 @@ import cn from "utils/cn.ts";
 
 interface IAuthFormProps {
   action: 'register' | 'login'
+  serverError?: string,
 }
 
-const AuthForm = ({action, children}: PropsWithChildren<IAuthFormProps>) => {
+const AuthForm = ({action, children, serverError}: PropsWithChildren<IAuthFormProps>) => {
   const authCtrl = useContext(authContext);
   const isLogin = action === 'login';
 
@@ -57,9 +58,15 @@ const AuthForm = ({action, children}: PropsWithChildren<IAuthFormProps>) => {
             </span>
           </div>
         )}
+        {serverError && (
+          <span className={cn('text__red', 'text__regular__s', 'text__400')}>
+          {serverError}
+        </span>
+        )}
       </div>
 
       {children}
+
     </div>
   );
 };

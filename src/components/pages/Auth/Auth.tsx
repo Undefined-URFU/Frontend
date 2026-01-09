@@ -34,7 +34,7 @@ const Auth = () => {
     <div className={s.form}>
       <AuthContext value={contextValues}>
         <ValidationForm errors={authCtrl.validationCtrl.errors} onSubmit={authCtrl.validationCtrl.handleSubmit}>
-          <AuthForm action={actionType}>
+          <AuthForm action={actionType} serverError={authCtrl.serverError}>
             <div className={s.actions}>
               <Button theme='primary' type="submit">
                 {actionType === 'login' ? 'Авторизоваться' : 'Продолжить'}
