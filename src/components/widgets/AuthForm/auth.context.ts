@@ -12,8 +12,6 @@ export const generateDefaultAuthValues = () => (
     email: '',
     password: '',
     rememberMe: true,
-    name: '',
-    birthdayDate: '',
   }
 )
 
@@ -23,7 +21,7 @@ const authContext = createContext<IAuthContext>({
   onChange: () => {
   },
   onCheck: () => {
-  }
+  },
 });
 
 export default authContext;

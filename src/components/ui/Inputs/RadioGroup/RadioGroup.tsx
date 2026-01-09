@@ -8,7 +8,7 @@ interface IOption {
 
 interface IRadioGroupProps {
   options: IOption[],
-  onCheck: (value: string, name: string) => void,
+  onCheck: (name: string, value: string, ) => void,
   name: string;
   value: string;
 }

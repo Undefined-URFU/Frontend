@@ -23,15 +23,19 @@
 
 .button[data-theme='primary'] {
   background: variables.$pink_color;
-  color: variables.$blue_color;
+  color: variables.$dark-blue_color;
+
+  &:hover {
+    background: variables.$pink_color_hover;
+  }
 }
 
 .button[data-theme='blue'] {
   background: variables.$blue_color;
   color: variables.$white_color;
-  &:hover{
-    background: variables.$pink_color;
-    color: variables.$black_color;
+
+  &:hover {
+    background: variables.$blue_color_hover;
   }
 }
 

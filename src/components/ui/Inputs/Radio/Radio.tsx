@@ -5,14 +5,14 @@ import {ChangeEvent} from "react";
 interface IRadioProps {
   name: string;
   value: string;
-  onCheck: (val: string, name: string) => void;
+  onCheck: (name: string, val: string,) => void;
   label: string;
   isChecked: boolean;
 }
 
 const Radio = (props: IRadioProps) => {
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    props.onCheck(e.target.value, props.name)
+    props.onCheck(props.name, e.target.value,)
   }
 
   return (

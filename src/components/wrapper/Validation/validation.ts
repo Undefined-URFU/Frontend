@@ -17,26 +17,10 @@ const passwordValidate = (password: string): IValidationFunctionResponse => {
   return null
 }
 
-const nameValidate = (name: string): IValidationFunctionResponse => {
-  if (!name) {
-    return {key: 'name', message: 'Введите имя'}
-  }
-  return null
-}
-
-const birthdayValidate = (date: string): IValidationFunctionResponse => {
-  if (!date) {
-    return {key: 'birthdayDate', message: 'Введите дату рождения'}
-  }
-  return null
-}
-
 
 const validation = {
   emailValidate,
   passwordValidate,
-  nameValidate,
-  birthdayValidate,
 }
 
 export default validation

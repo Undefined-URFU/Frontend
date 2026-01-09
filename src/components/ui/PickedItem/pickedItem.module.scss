@@ -1,0 +1,31 @@
+@use '../../../styles/variables';
+
+.container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  background: variables.$gray_color2;
+  color: variables.$dark-blue_color;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background: variables.$gray_color2_hover;
+    padding-right: 24px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 12px;
+      background-image: url('../../../assets/icons/DeleteItemIcon.svg');
+      background-size: contain;
+    }
+  }
+}
+

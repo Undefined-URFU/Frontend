@@ -11,4 +11,5 @@ export const appRoutes = [
         element: <Catalog/>,
     },
 
+
 ]

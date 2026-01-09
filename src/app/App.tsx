@@ -7,6 +7,8 @@ import 'app/styles/sanitize.scss'
 import 'styles/_variables.scss'
 import 'app/styles/fonts.scss'
 import 'styles/_text.scss'
+import 'styles/input.scss'
+
 
 const App = () => {
 
@@ -17,9 +19,12 @@ const App = () => {
   }, [])
 
   return (
+
     <AuthProvider>
       <RouterProvider router={appRouter}/>
     </AuthProvider>
+
+
   );
 };
 

@@ -8,11 +8,10 @@ import {
 } from 'react'
 import cn from 'utils/cn'
 import ValidationContext from 'components/wrapper/Validation/ValidationContext'
-import s from './TextInput.module.scss'
 
 export type OmittedInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'size'>
 
-export interface ITextInputProps<T extends string> extends OmittedInputProps{
+export interface ITextInputProps<T extends string> extends OmittedInputProps {
   style?: CSSProperties
   onChange: (value: string, name: T) => void
   label?: string
@@ -25,7 +24,7 @@ export interface ITextInputProps<T extends string> extends OmittedInputProps{
 }
 
 
-const TextInput = <T extends string> ({
+const TextInput = <T extends string>({
   onChange,
   children,
   className,
@@ -37,7 +36,7 @@ const TextInput = <T extends string> ({
   ...props
 }: PropsWithChildren<ITextInputProps<T>>) => {
 
-  const { type = 'text', name } = props
+  const {type = 'text', name} = props
   const inputRef = useRef<HTMLInputElement>(null)
   const context = useContext(ValidationContext)
   const error = context.errors[props.name]?.message || props.error
@@ -49,14 +48,14 @@ const TextInput = <T extends string> ({
 
   useEffect(() => {
     if (autoFocus && inputRef.current) {
-      inputRef.current.focus({ preventScroll: true })
+      inputRef.current.focus({preventScroll: true})
     }
   }, [autoFocus])
 
 
   return (
     <div
-      className={s.inputWrapper}
+      className='inputWrapper'
       style={style}
     >
       {children}
@@ -64,7 +63,7 @@ const TextInput = <T extends string> ({
         ref={inputRef}
         data-error={isError}
         type={type}
-        className={cn(s.textInput, className)}
+        className={cn('textInput', className)}
         value={value}
         onChange={handleChange}
         data-size={size}

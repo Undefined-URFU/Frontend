@@ -1,11 +1,20 @@
-import {type PropsWithChildren, useState} from "react";
+import {type PropsWithChildren, useEffect} from "react";
 import Auth from "components/pages/Auth/Auth.tsx";
+import {applyInterceptors} from "models/http";
+import {authAtom} from "stores/auth/auth.atom.ts";
+import {useAtom} from "jotai";
 
 const AuthProvider = (props: PropsWithChildren) => {
-  const [user,] = useState(null)
+  const [authState, setAuthState] = useAtom(authAtom)
 
-  if (!user) {
-    return <Auth/>
+
+  useEffect(() => {
+    applyInterceptors(setAuthState)
+  }, []);
+
+  console.log(authState.token, authState.isOnboarding);
+  if (!authState.token || authState.isOnboarding) {
+    return <Auth />;
   }
 
 

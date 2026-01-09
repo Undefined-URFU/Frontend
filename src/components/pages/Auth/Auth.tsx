@@ -6,10 +6,14 @@ import AuthContext from "components/widgets/AuthForm/auth.context.ts";
 import Button from "components/ui/Buttons/Button";
 import cn from "utils/cn.ts";
 import ValidationForm from "components/wrapper/Validation/ValidationForm.tsx";
+import OnboardingForm from "components/widgets/OnboardingForm/OnboardingForm.tsx";
+import {useAtomValue} from "jotai";
+import {authAtom} from "stores/auth/auth.atom.ts";
 
 const Auth = () => {
   const [actionType, setActionType] = useState<'register' | 'login'>('login');
   const authCtrl = useAuthCtrl({actionType});
+  const {isOnboarding} = useAtomValue(authAtom)
 
 
   const contextValues = {
@@ -18,14 +22,21 @@ const Auth = () => {
     onCheck: authCtrl.handleCheck,
   }
 
+  if (isOnboarding) {
+    return (
+      <div className={s.form}>
+        <OnboardingForm/>
+      </div>
+    )
+  }
 
   return (
     <div className={s.form}>
       <AuthContext value={contextValues}>
-        <ValidationForm errors={authCtrl.validationCtrl.errors} onSubmit={authCtrl.handleSubmit}>
+        <ValidationForm errors={authCtrl.validationCtrl.errors} onSubmit={authCtrl.validationCtrl.handleSubmit}>
           <AuthForm action={actionType}>
             <div className={s.actions}>
-              <Button theme='blue' type="submit">
+              <Button theme='primary' type="submit">
                 {actionType === 'login' ? 'Авторизоваться' : 'Продолжить'}
               </Button>
 

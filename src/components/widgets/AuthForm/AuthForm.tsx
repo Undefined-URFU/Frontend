@@ -15,6 +15,7 @@ const AuthForm = ({action, children}: PropsWithChildren<IAuthFormProps>) => {
   const authCtrl = useContext(authContext);
   const isLogin = action === 'login';
 
+
   return (
     <div className={s.container}>
       <ArrowIcon/>
@@ -31,6 +32,7 @@ const AuthForm = ({action, children}: PropsWithChildren<IAuthFormProps>) => {
         >
           Почта
         </TextInput>
+
 
         <TextInput
           value={authCtrl.values.password}
