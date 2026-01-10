@@ -1,0 +1,68 @@
+@use 'styles/variables';
+
+.container {
+	display: flex;
+	justify-content: center;
+	padding-top: 32px;
+}
+
+.profile {
+	width: 1296px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.left_panel {
+	border-radius: 16px;
+	border: 1px solid variables.$gray_color2;
+	width: 227px;
+	height: 580px;
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+	align-items: center;
+}
+
+.tab {
+	width: 163px;
+	height: 40px;
+	border-radius: 16px;
+	text-decoration: none;
+	display: flex;
+	padding-left: 12px;
+	align-items: center;
+	gap: '5px';
+}
+
+.active {
+	gap: '5px';
+	background-color: variables.$pink_color;
+	color: variables.$blue_color;
+	width: 163px;
+	height: 40px;
+	border-radius: 8px;
+	text-decoration: none;
+	display: flex;
+	padding-left: 12px;
+	align-items: center;
+}
+
+.delete {
+	position: absolute;
+	bottom: 0;
+	right: -5px;
+}
+
+.profileInfo {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.button {
+	width: 163px;
+}
+
+.tabIcon {
+	margin-right: 5px;
+}

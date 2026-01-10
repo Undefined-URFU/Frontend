@@ -1,0 +1,47 @@
+@import 'styles/variables';
+
+.container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	height: 80px;
+}
+
+.header {
+	width: 1296px;
+	height: 80px;
+	border-radius: 0 0 16px 16px;
+	background-color: $pink_color;
+	display: flex;
+	align-items: center;
+}
+
+.header_content {
+	width: 100%;
+	margin: 0 24px;
+	display: flex;
+	justify-content: space-between;
+	text-decoration: none;
+}
+
+.logo {
+	color: #41549a;
+	font-size: 32px;
+	font-weight: 800;
+	text-decoration: none;
+}
+
+.searchWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 8px; 
+  align-items: center;
+}
+
+.iconsWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 112px;
+}
