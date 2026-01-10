@@ -1,0 +1,51 @@
+@use 'styles/variables';
+
+.pic {
+	border-radius: 16px;
+}
+
+img {
+	width: 227px;
+	height: 227px;
+}
+
+.card {
+	width: 227px;
+	height: 342px;
+}
+
+.info {
+  
+    margin-top: 10px;
+	width: 227px;
+	height: 100px;
+	display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.price {
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.name {
+	font-size: 16px;
+	font-weight: 400;
+}
+
+.bottom {
+  display: flex;
+  gap: 15px;
+}
+
+.rating, .reviews {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+}
+
+.reviews {
+  color: variables.$gray_color2_hover;
+}

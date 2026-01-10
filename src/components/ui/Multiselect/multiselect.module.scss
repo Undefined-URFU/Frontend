@@ -1,0 +1,29 @@
+.delete {
+	position: absolute;
+	bottom: 16px;
+	right: -5px;
+	cursor: pointer;
+}
+
+.base {
+	height: 27px;
+	padding: 0 8px;
+	border-radius: 3px;
+	display: inline-flex;
+	align-items: center;
+	font-size: 14px;
+}
+
+.selected {
+	background-color: #41549a66;
+}
+
+.notSelected {
+	background-color: #41549a33;
+}
+
+.wrapper {
+	margin: 0 10px 10px 0;
+	display: inline-flex;
+	position: relative;
+}
